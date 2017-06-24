@@ -13,7 +13,7 @@ def get_vector(text):
             i.sentiment.subjectivity for i in blob.sentences
         ]) / len(blob.sentences),
         'avg_sentence_length': sum([
-            len(i) for i in blob.sentences
+            len(i.words) for i in blob.sentences
         ]) / len(blob.sentences),
         'avg_spelling': sum(
             [i.spellcheck()[0][1] for i in blob.words
