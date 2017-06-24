@@ -14,5 +14,8 @@ def get_vector(text):
         ]) / len(blob.sentences),
         'avg_sentence_length': sum([
             len(i) for i in blob.sentences
-        ]) / len(blob.sentences)
+        ]) / len(blob.sentences),
+        'avg_spelling': sum(
+            [i.spellcheck()[0][1] for i in blob.words
+        ]) / len(blob.words)
     }
